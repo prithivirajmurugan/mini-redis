@@ -5,6 +5,16 @@ pub mod frame;
 pub use frame::Frame;
 mod shutdown;
 use shutdown::Shutdown;
+
+pub mod cmd;
+pub use cmd::Command;
+
+mod db;
+use db::Db;
+use db::DbDropGuard;
+
+mod parse;
+use parse::{Parse,ParseError};
 /// Error returned by most functions.
 ///
 /// When writing a real application, one might want to consider a specialized
